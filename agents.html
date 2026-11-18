@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI agent automation | Lodestar Lab</title>
+<meta name="description" content="How Lodestar Lab builds AI agents for nonprofits: limited tools, human approval and an audit log for every run.">
+<meta property="og:title" content="AI agent automation | Lodestar Lab">
+<meta property="og:description" content="How Lodestar Lab builds AI agents for nonprofits: limited tools, human approval and an audit log for every run.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-16 -16 32 32'%3E%3Cpath d='M0-15L3.3-3.3 15 0 3.3 3.3 0 15-3.3 3.3-15 0-3.3-3.3Z' fill='%23EB4547'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><svg viewBox="-16 -16 32 32" aria-hidden="true"><path d="M0-15L3.3-3.3 15 0 3.3 3.3 0 15-3.3 3.3-15 0-3.3-3.3Z" fill="#EB4547"/><circle cx="9" cy="-9" r="2.6" fill="#4FB8C8"/></svg><span><b>Lodestar Lab</b><small>a MiCreate lab</small></span></a>
+    <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <ul><li><a href="agents.html" aria-current="page">AI agents</a></li><li><a href="research.html">Research</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a class="gh-link" href="#">GitHub</a></li></ul>
+      <a class="btn btn-line" href="about.html#join">Join the lab</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<div class="intro">
+  <div class="wrap">
+    <h1 class="bar">AI agent automation</h1>
+    <p class="lede">Agents that take routine work off nonprofit staff. They read, draft and check, then wait for a person to approve before anything is sent, published or assigned.</p>
+  </div>
+</div>
+
+<section id="sim">
+  <div class="wrap">
+    <h2 class="bar">Watch an agent run</h2>
+    <p class="lede">Pick a workflow and run it with sample data. When the agent reaches its approval step, you decide: approve, or send it back with a note.</p>
+    <div class="sim-tabs" id="sim-tabs" role="group" aria-label="Choose a workflow"></div>
+    <div class="sim">
+      <div class="console">
+        <div class="console-head">
+          <div><h3 id="sim-title"></h3><p>Simulated run with sample data</p></div>
+          <button class="btn btn-coral" id="run">Run sample</button>
+        </div>
+        <ol class="trace" id="trace" aria-live="polite"></ol>
+      </div>
+      <aside class="perms" id="perms"></aside>
+    </div>
+    <p class="sim-note">This demo runs in your browser. No model is called and nothing is saved.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2 class="bar">How every agent is built</h2>
+    <p class="lede">All our agents share the same five-part structure, so partners know exactly where a person stays in control.</p>
+    <div class="flow">
+      <div><h4>Trigger</h4><p>A person or a schedule starts the run. Text inside a document or email never starts one.</p></div>
+      <div><h4>Plan</h4><p>The model breaks the task into steps, using only the tools this agent was given.</p></div>
+      <div><h4>Act with limited tools</h4><p>Each tool is allowed, needs approval, or never available. Numbers are computed in code, not by the model.</p></div>
+      <div class="gate"><h4>Approval</h4><p>Anything sent, published or assigned waits for a person, who can approve it or send it back.</p></div>
+      <div><h4>Audit log</h4><p>Every step, tool call and approval is written to a log the partner can read.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="bar">Guardrails</h2>
+    <div class="grid3">
+      <div><h3>Only the tools it needs</h3><p>Each agent gets the smallest set of tools its task requires, and no client records unless a partner approves in writing.</p></div>
+      <div><h3>Client data stays put</h3><p>Agents that touch client data run on the partner's own computer or systems. Nothing goes to outside AI services without written approval.</p></div>
+      <div><h3>Documents are data</h3><p>Text inside files, emails and web pages is treated as content to work on, never as instructions the agent follows.</p></div>
+      <div><h3>Stop and ask</h3><p>When the agent is unsure, it stops and asks a person instead of guessing.</p></div>
+      <div><h3>Tested on real tasks</h3><p>Each agent is measured on an open task suite: success rate, staff edits per output, send-back rate, and cost and time per run.</p></div>
+      <div><h3>Easy to switch off</h3><p>Partners can pause any agent at any time, and staff can always do the task by hand.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="wash">
+  <div class="wrap">
+    <h2 class="bar">Agent projects</h2>
+    <div class="grid3" data-agent-projects></div>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h3>Lodestar Lab</h3>
+      <p>A volunteer, open-source tech lab of MiCreate. All code, accounts and data belong to MiCreate.</p>
+      <p><a class="mc-link" href="#">Visit MiCreate</a><br><a class="gh-org" href="#">MiCreate on GitHub</a></p>
+    </div>
+    <div>
+      <h3>Pages</h3>
+      <ul><li><a href="index.html">Home</a></li><li><a href="agents.html">AI agents</a></li><li><a href="research.html">Research</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a class="gh-link" href="#">GitHub</a></li></ul>
+    </div>
+    <div class="help">
+      <h3>Need help now?</h3>
+      <p>In the US, the National Human Trafficking Hotline is free and confidential: call <a href="tel:18883737888">1-888-373-7888</a> or text 233733. Elsewhere, contact local emergency services.</p>
+    </div>
+    <p class="fine">Lodestar Lab is a proposal pending approval from MiCreate leadership. Code is open source.</p>
+  </div>
+</footer>
+<script src="assets/data.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

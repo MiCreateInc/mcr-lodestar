@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | Lodestar Lab</title>
+<meta name="description" content="Why MiCreate started Lodestar Lab, its principles, roadmap, how impact is measured and how to contribute.">
+<meta property="og:title" content="About | Lodestar Lab">
+<meta property="og:description" content="Why MiCreate started Lodestar Lab, its principles, roadmap, how impact is measured and how to contribute.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-16 -16 32 32'%3E%3Cpath d='M0-15L3.3-3.3 15 0 3.3 3.3 0 15-3.3 3.3-15 0-3.3-3.3Z' fill='%23EB4547'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><svg viewBox="-16 -16 32 32" aria-hidden="true"><path d="M0-15L3.3-3.3 15 0 3.3 3.3 0 15-3.3 3.3-15 0-3.3-3.3Z" fill="#EB4547"/><circle cx="9" cy="-9" r="2.6" fill="#4FB8C8"/></svg><span><b>Lodestar Lab</b><small>a MiCreate lab</small></span></a>
+    <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <ul><li><a href="agents.html">AI agents</a></li><li><a href="research.html">Research</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html" aria-current="page">About</a></li><li><a class="gh-link" href="#">GitHub</a></li></ul>
+      <a class="btn btn-line" href="about.html#join">Join the lab</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<div class="intro">
+  <div class="wrap">
+    <h1 class="bar">About the lab</h1>
+    <p class="lede">A volunteer lab that turns MiCreate's anti-trafficking mission into working software.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap split">
+    <h2 class="bar">Why a lab</h2>
+    <div>
+      <p>MiCreate offers free legal and business support to creative entrepreneurs who have experienced human trafficking, and teams up with local organizations working against it.</p>
+      <p>Organizations like these do critical work with almost no technical staff. Hours go to translation, formatting and reporting, and tools like resource finders or risk screening rarely get built for them.</p>
+      <p>The lab is the next step: free, open-source tools partner organizations can actually use. It runs on donated cloud credits and volunteer time, so it costs MiCreate nothing to start. All code, accounts and data belong to MiCreate, and every project ships with documentation so the work can continue if any volunteer steps back.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2 class="bar">Principles</h2>
+    <div class="princ" id="princ"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="bar">First six months</h2>
+    <p class="lede">Targets, not deadlines. The lab runs on 4 to 6 volunteer hours a week and slows down before anyone's day job does.</p>
+    <ol class="road" id="road"></ol>
+    <p class="note">Pilots start only after the data and ethics policy is signed off. Public releases wait for partner feedback.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2 class="bar">Impact</h2>
+    <p class="lede">Reported to MiCreate every quarter. Tracking starts with the first release.</p>
+    <div class="metrics" id="metrics"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="bar">Roles</h2>
+    <div class="roles" id="roles"></div>
+  </div>
+</section>
+
+<section class="wash" id="join">
+  <div class="wrap join">
+    <div>
+      <h2 class="bar">Join the lab</h2>
+      <p class="lede">Everyone contributes publicly under a pseudonym, so contributing never exposes who you are.</p>
+      <ul>
+        <li>Your public profile shows no real name, photo, employer or location.</li>
+        <li>You commit with GitHub's private no-reply email.</li>
+        <li>MiCreate leadership keeps a confidential roster and can confirm your role in writing when you need it.</li>
+        <li>You sign a short volunteer agreement covering these principles before your first contribution.</li>
+      </ul>
+      <div class="actions"><a class="btn btn-coral gh-discuss" href="#">Introduce yourself on GitHub</a></div>
+    </div>
+    <div class="namecard">
+      <p style="margin:0">Your lab name could be</p>
+      <div class="handle" id="handle" aria-live="polite"></div>
+      <p>Lab names come from stars, so they say nothing about the person behind them. Set up git with:</p>
+      <code id="gitcmd"></code>
+      <div class="actions">
+        <button class="btn btn-coral" id="draw" type="button">Draw another name</button>
+        <button class="btn btn-quiet" id="copy" type="button">Copy git setup</button>
+      </div>
+      <div class="copied" id="copied" role="status"></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h3>Lodestar Lab</h3>
+      <p>A volunteer, open-source tech lab of MiCreate. All code, accounts and data belong to MiCreate.</p>
+      <p><a class="mc-link" href="#">Visit MiCreate</a><br><a class="gh-org" href="#">MiCreate on GitHub</a></p>
+    </div>
+    <div>
+      <h3>Pages</h3>
+      <ul><li><a href="index.html">Home</a></li><li><a href="agents.html">AI agents</a></li><li><a href="research.html">Research</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a class="gh-link" href="#">GitHub</a></li></ul>
+    </div>
+    <div class="help">
+      <h3>Need help now?</h3>
+      <p>In the US, the National Human Trafficking Hotline is free and confidential: call <a href="tel:18883737888">1-888-373-7888</a> or text 233733. Elsewhere, contact local emergency services.</p>
+    </div>
+    <p class="fine">Lodestar Lab is a proposal pending approval from MiCreate leadership. Code is open source.</p>
+  </div>
+</footer>
+<script src="assets/data.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
