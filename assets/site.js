@@ -30,7 +30,7 @@
       if (!reduce) { p.style.setProperty("--len", Math.hypot(b.x - a.x, b.y - a.y)); p.classList.add("draw"); p.style.animationDelay = delay + "s"; }
     };
     L.PROJECTS.forEach((p, i) => line(C, p, "", .2 + i * .15));
-    line(byId.A1, byId.A2, "track", 1.1); line(byId.A2, byId.A3, "track", 1.15); line(byId.B1, byId.B2, "track", 1.2);
+    ["A", "B"].forEach(t => { const ps = L.PROJECTS.filter(p => p.track === t); ps.slice(1).forEach((p, i) => line(ps[i], p, "track", 1.1 + i * .05)); });
     const idea = { x: 395, y: 465 }; line(C, idea, "track", 1.3);
 
     const g = svgEl("g", { transform: `translate(${C.x} ${C.y})`, "aria-hidden": "true" }, stars);
@@ -57,7 +57,7 @@
   /* home: track lists */
   $$("[data-track-list]").forEach(ul => {
     const t = ul.dataset.trackList;
-    ul.innerHTML = L.PROJECTS.filter(p => p.track === t).sort((a, b) => a.id.localeCompare(b.id))
+    ul.innerHTML = L.PROJECTS.filter(p => p.track === t)
       .map(p => `<li><b>${p.id}</b><span><a href="${projUrl(p.id)}">${p.name}</a> <span class="pill ${p.first ? "first" : ""}">${p.status}</span></span></li>`).join("");
   });
 
@@ -87,8 +87,8 @@
             <div><dt>How we evaluate</dt><dd>${p.eval}</dd></div>
             <div><dt>Data and risk</dt><dd>${p.data}</dd></div>
             <div><dt>Research question</dt><dd>${rq ? `<a href="research.html#${rq.id}">${rq.id}</a>: ${rq.q}` : "None yet"}</dd></div>
-            <div><dt>Repository</dt><dd><a href="${GH}/${p.repo}" target="_blank" rel="noopener">${L.CONFIG.org}/${p.repo}</a> (opens once work starts)</dd></div>
-            ${p.track === "A" ? `<div><dt>See it run</dt><dd><a href="agents.html#run-${p.id}">Watch a simulated run of ${p.id}</a></dd></div>` : ""}
+            <div><dt>Repository</dt><dd>${p.repo ? `<a href="${GH}/${p.repo}" target="_blank" rel="noopener">${L.CONFIG.org}/${p.repo}</a> (opens once work starts)` : "Lives in MiCreate's existing tools for now"}</dd></div>
+            ${L.AGENT_RUNS.some(w => w.id === p.id) ? `<div><dt>See it run</dt><dd><a href="agents.html#run-${p.id}">Watch a simulated run of ${p.id}</a></dd></div>` : ""}
           </dl></div></div>`;
         r.querySelector("button").addEventListener("click", () => toggle(r));
         rows.appendChild(r);
@@ -170,13 +170,13 @@
     tabs.innerHTML = L.AGENT_RUNS.map((w, i) => `<button class="chip" aria-pressed="false">${w.id} ${w.label}</button>`).join("");
     $$("button", tabs).forEach((b, i) => b.addEventListener("click", () => select(i)));
     runBtn.addEventListener("click", run);
-    const fromHash = () => { const m = location.hash.match(/^#run-(A\d)$/); const i = m ? L.AGENT_RUNS.findIndex(w => w.id === m[1]) : -1; select(i >= 0 ? i : 0, i >= 0); };
+    const fromHash = () => { const m = location.hash.match(/^#run-([A-Z]\d)$/); const i = m ? L.AGENT_RUNS.findIndex(w => w.id === m[1]) : -1; select(i >= 0 ? i : 0, i >= 0); };
     fromHash(); addEventListener("hashchange", fromHash);
   }
 
   /* agent project list */
   $$("[data-agent-projects]").forEach(el => {
-    el.innerHTML = L.PROJECTS.filter(p => p.track === "A").sort((a, b) => a.id.localeCompare(b.id)).map(p => `
+    el.innerHTML = L.PROJECTS.filter(p => p.track === "A").map(p => `
       <div><h3><a href="${projUrl(p.id)}">${p.id} ${p.name}</a></h3><p>${p.what}</p><p><span class="pill ${p.first ? "first" : ""}">${p.status}</span> <span class="risk ${p.risk}" style="margin-left:.5rem"><b></b>${p.riskText} risk</span></p></div>`).join("");
   });
 
