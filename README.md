@@ -1,4 +1,4 @@
-# Lodestar Lab website
+# Lodestar Lab
 
 The public site for Lodestar Lab, MiCreate's volunteer tech lab. It covers the lab's two tracks (AI agent automation and ML research for trafficking prevention), every planned project, the research agenda and how to contribute.
 
